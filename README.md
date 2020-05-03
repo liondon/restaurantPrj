@@ -16,8 +16,5 @@ an Web app building with Node.js/Express, showing my favorite restaurants. The f
 3. run node app.js
 4. open the link: http://localhost:3000 with your browser.
 
-## License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
 ## Acknowledgments
 This is an assignment from AlphaCamp.
