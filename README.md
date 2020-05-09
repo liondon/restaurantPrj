@@ -13,10 +13,14 @@ an Web app building with Node.js/Express, showing my favorite restaurants.
 
 ## Getting Started
 
-1. clone the project to your local machine.
-2. run npm install
-3. run node app.js
-4. open the link: http://localhost:3000 with your browser.
+1. clone the project to your local machine:
+    ```git clone https://github.com/liondon/restaurantPrj```
+   (Or simply download its .zip file and extract it)
+2. go into the project folder: ```cd restaurantPrj```
+3. run ```npm install``` under the project folder to install necessary packages for the app
+4. run ```node app.js``` to start running the app
+5. open the link: ```http://localhost:3000``` with your browser, then you can use the web app
+6. press ```ctrl + c``` to stop running the app
 
 ## Acknowledgments
 This is an assignment from AlphaCamp.
