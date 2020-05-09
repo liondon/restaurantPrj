@@ -13,8 +13,8 @@ an Web app building with Node.js/Express, showing my favorite restaurants.
 
 ## Getting Started
 
-1. clone the project to your local machine:
-    ```git clone https://github.com/liondon/restaurantPrj```
+1. clone the project to your local machine: \n
+    ```git clone https://github.com/liondon/restaurantPrj``` \n
    (Or simply download its .zip file and extract it)
 2. go into the project folder: ```cd restaurantPrj```
 3. run ```npm install``` under the project folder to install necessary packages for the app
