@@ -2,7 +2,7 @@
 
 an Web app building with Node.js/Express, showing my favorite restaurants. 
 
-## Features:
+## Features
  - 使用者可以在首頁看到所有餐廳與它們的簡單資料(餐廳照片, 名稱, 分類, 評分)
  - 使用者可以再點進去看餐廳的詳細資訊 (類別, 地址, 電話, 描述, 圖片)
  - 使用者可以透過搜尋餐廳名稱來找到特定的餐廳
