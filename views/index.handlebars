@@ -18,26 +18,35 @@
   </div>
 </div>
 
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-10 col-12 mx-auto">
+      <a class="btn btn-primary mb-3" href="/restaurants/new">Add Restaurant</a>
+    </div>
+  </div>
+</div>
+
+
 <!-- restaurant list -->
-<div class="container mt-5">
+<div class="container">
   <div class="row">
     <div class="col-md-10 col-12 mx-auto">
       <div class="card-columns">
         {{#each restaurants}}
-        <a href="/restaurants/{{this.id}}" class="text-secondary">
+        <a href="/restaurants/{{this._id}}" class="text-secondary">
           <div class="card mb-3">
-            <img class="card-img-top" src="{{this.image}}" alt="{{this.name}}">
+            {{!-- <img class="card-img-top" src="{{this.image}}" alt="{{this.name}}"> --}}
             <div class="card-body p-3">
               <h6 class="card-title mb-1">{{this.name}}</h6>
 
-              <div class="restaurant-category mb-1">
+              {{!-- <div class="restaurant-category mb-1">
                 <i class="fas fa-utensils pr-2"></i> {{this.category}}
-              </div>
+              </div> --}}
 
-              <span class="badge badge-pill badge-danger font-weight-normal">
+              {{!-- <span class="badge badge-pill badge-danger font-weight-normal">
                 {{this.rating}}
                 <i class="fas fa-star fa-xs"></i>
-              </span>
+              </span> --}}
             </div>
           </div>
         </a>

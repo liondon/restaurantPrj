@@ -1,0 +1,33 @@
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <h1 class="text-center mt-3">Add Restaurant</h1>
+      <form action="/restaurants" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" class="form-control" placeholder="Enter Name" value="{{ name }}"
+            required>
+        </div>
+        <div class="form-group">
+          <label for="tel">Tel</label>
+          <input type="text" id="tel" name="tel" class="form-control" placeholder="Enter Telephone" value="{{ tel }}">
+        </div>
+        <div class="form-group">
+          <label for="addr">Addr</label>
+          <input type="text" id="addr" name="addr" class="form-control" placeholder="Enter Address" value="{{ addr }}">
+        </div>
+        <div class="form-group">
+          <label for="open_hours">Open Hours</label>
+          <input type="date" id="open_hours" name="open_hours" class="form-control" placeholder="Enter Open Hours"
+            value="{{ open_hours }}">
+        </div>
+        <div class="form-group">
+          <label for="desc">Description</label>
+          <input type="text" id="desc" name="desc" class="form-control" placeholder="Enter Description"
+            value="{{ desc }}">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Create</button>
+      </form>
+    </div>
+  </div>
+</div>

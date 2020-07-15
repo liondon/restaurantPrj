@@ -7,36 +7,44 @@
       <p class="mb-1">
         <span class="text-secondary">
           <i class="fas fa-utensils pr-2"></i>
-          Category:
+          Open Hours:
         </span>
-        {{restaurant.category}}
+        {{restaurant.open_hours}}
       </p>
 
       <p class="mb-1">
         <span class="text-secondary">
           <i class="fas fa-map-marker-alt pr-2"></i>
-          Location:
+          Address:
         </span>
-        {{restaurant.location}}
-        <a href="{{restaurant.google_map}}" class="text-secondary" target="_blank">
+        {{restaurant.addr}}
+        {{!-- <a href="{{restaurant.google_map}}" class="text-secondary" target="_blank">
           <i class="fas fa-location-arrow pr-2 fa-xs"></i>
-        </a>
+        </a> --}}
       </p>
 
       <p class="mb-1">
         <span class="text-secondary">
           <i class="fas fa-mobile-alt pr-2"></i>
-          Phone:
+          Tel:
         </span>
-        {{restaurant.phone}}
+        {{restaurant.tel}}
       </p>
 
       <p class="mb-5">
-        {{restaurant.description}}
+        {{restaurant.desc}}
       </p>
 
-      <img class="rounded mx-auto d-block mb-4 w-100" src="{{restaurant.image}}" alt="{{restaurant.name}}"
-        style="max-width: 600px;">
+      {{!-- <img class="rounded mx-auto d-block mb-4 w-100" src="{{restaurant.image}}" alt="{{restaurant.name}}"
+        style="max-width: 600px;"> --}}
+
+      <form action="/restaurants/{{ restaurant._id }}?_method=delete" method="POST" style="display: inline;">
+        <div>
+          <a class="btn btn-success" href="/restaurants/{{ restaurant._id }}/edit">edit</a>
+          <button class="btn btn-danger" type="submit">delete</button>
+        </div>
+      </form>
+
     </div>
   </div>
 </div>
