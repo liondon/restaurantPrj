@@ -18,9 +18,9 @@
           Address:
         </span>
         {{restaurant.addr}}
-        {{!-- <a href="{{restaurant.google_map}}" class="text-secondary" target="_blank">
+        <a href="{{restaurant.google_map}}" class="text-secondary" target="_blank">
           <i class="fas fa-location-arrow pr-2 fa-xs"></i>
-        </a> --}}
+        </a>
       </p>
 
       <p class="mb-1">
@@ -35,8 +35,8 @@
         {{restaurant.desc}}
       </p>
 
-      {{!-- <img class="rounded mx-auto d-block mb-4 w-100" src="{{restaurant.image}}" alt="{{restaurant.name}}"
-        style="max-width: 600px;"> --}}
+      <img class="rounded mx-auto d-block mb-4 w-100" src="{{restaurant.image}}" alt="{{restaurant.name}}"
+        style="max-width: 600px;">
 
       <form action="/restaurants/{{ restaurant._id }}?_method=delete" method="POST" style="display: inline;">
         <div>

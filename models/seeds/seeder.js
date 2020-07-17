@@ -9,6 +9,7 @@ const Restaurant = require('../restaurant')
 
 const db = require('../../config/mongoose')
 
+const SEED_RESTAURANTs = require('../../restaurant.json')
 const SEED_USERs = [{
   name: 'user1',
   email: 'user1@example.com',
@@ -19,32 +20,38 @@ const SEED_USERs = [{
   password: '12345678'
 }]
 
-function createRestaurants(userId, k, i) {
+function createRestaurants(userId, first, last) {
   return Promise.all(Array.from(
-    { length: k },
-    (_, j) => Restaurant.create({
-      name: `Restaurant #${i + j + 1}`,
-      tel: '012345678',
-      addr: 'No.1, xyz Rd., ren-ai Dist., Taipei city',
-      desc: 'The food here is fascinating!',
-      open_hours: 2020 / 01 / 01,
-      userId
-    })
+    { length: last - first },
+    (_, i) => {
+      const restaurant = SEED_RESTAURANTs.results.find(
+        restaurant => restaurant.id.toString() === (first + i + 1).toString())
+      return Restaurant.create({
+        name: restaurant.name,
+        tel: restaurant.phone,
+        addr: restaurant.location,
+        open_hours: 2020 / 01 / 01,
+        category: restaurant.category,
+        rating: restaurant.rating,
+        image: restaurant.image,
+        google_map: restaurant.google_map,
+        desc: restaurant.description,
+        userId
+      })
+    }
   ))
 }
 
 db.once('open', async () => {
-  let seeds = await Promise.all(Array.from(
+  await Promise.all(Array.from(
     { length: 2 },
-    async (_, j) => {
-      console.log(SEED_USERs[j])
-      let user = await User.create({
-        name: SEED_USERs[j].name,
-        email: SEED_USERs[j].email,
-        password: bcrypt.hashSync(SEED_USERs[j].password, bcrypt.genSaltSync(10))
+    async (_, i) => {
+      const user = await User.create({
+        name: SEED_USERs[i].name,
+        email: SEED_USERs[i].email,
+        password: bcrypt.hashSync(SEED_USERs[i].password, bcrypt.genSaltSync(10))
       })
-      const userId = user._id
-      let restaurants = await createRestaurants(userId, 3, j * 3)
+      await createRestaurants(user._id, i * 3, (i + 1) * 3)
     }))
   console.log('seeds added.')
   process.exit()
