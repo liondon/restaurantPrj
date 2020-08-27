@@ -11,22 +11,22 @@
         <div class="form-group">
           <label for="tel">Tel</label>
           <input type="text" id="tel" name="tel" class="form-control" placeholder="Enter Telephone"
-            value="{{ restaurant.tel }}">
+            value="{{ restaurant.tel }}" required>
         </div>
         <div class="form-group">
           <label for="addr">Addr</label>
           <input type="text" id="addr" name="addr" class="form-control" placeholder="Enter Address"
-            value="{{ restaurant.addr }}">
+            value="{{ restaurant.addr }}" required>
         </div>
-        <div class="form-group">
+        {{!-- <div class="form-group">
           <label for="open_hours">Open Hours</label>
           <input type="date" id="open_hours" name="open_hours" class="form-control" placeholder="Enter Open Hours"
-            value="{{ restaurant.open_hours }}">
-        </div>
+            value="{{ restaurant.open_hours }}" required>
+        </div> --}}
         <div class="form-group">
           <label for="desc">Description</label>
           <input type="text" id="desc" name="desc" class="form-control" placeholder="Enter Description"
-            value="{{ restaurant.desc }}">
+            value="{{ restaurant.desc }}" required>
         </div>
         <button type="submit" class="btn btn-primary btn-block">Submit</button>
       </form>

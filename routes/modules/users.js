@@ -11,11 +11,9 @@ router.get('/register', (req, res) => {
 
 router.post('/register', (req, res) => {
   const { name, email, password, confirmPassword } = req.body
-  let errors = []
   if (password !== confirmPassword) {
-    errors.push({ msg: 'Password and Confirm Password do not match!' })
+    req.flash('warning_msg', 'Password and Confirm Password do not match!')
     return res.render('register', {
-      errors,
       name,
       email,
       password,
@@ -25,9 +23,8 @@ router.post('/register', (req, res) => {
   User.findOne({ email })
     .then(user => {
       if (user) {
-        errors.push({ msg: 'This email has been registered!' })
+        req.flash('warning_msg', 'This email has been registered!')
         return res.render('register', {
-          errors,
           name,
           email,
           password,
@@ -40,6 +37,7 @@ router.post('/register', (req, res) => {
           password: bcrypt.hashSync(password, bcrypt.genSaltSync(10))
         })
           .then(user => {
+            req.flash('success_msg', 'Registration succeeded!')
             res.redirect('/users/login')
           })
       }

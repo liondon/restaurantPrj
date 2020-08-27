@@ -18,7 +18,9 @@ router.post('/', (req, res) => {
     addr,
     open_hours,
     desc,
-    userId
+    userId,
+    rating: `${Math.floor(Math.random() * 50 + 1) / 10}`,
+    image: `https://loremflickr.com/320/240/restaurant,food/?random=${Math.random() * 100}`
   })
     .then(() => res.redirect('/'))
     .catch(err => console.log(err))
